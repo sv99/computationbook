@@ -1,4 +1,4 @@
-require 'execjs/json'
+require 'json'
 require_relative '../syntax/assign'
 
 class Assign
@@ -7,6 +7,6 @@ class Assign
   end
 
   def to_javascript
-    "function (e) { e[#{ExecJS::JSON.encode(name)}] = (#{expression.to_javascript}(e)); return e; }"
+    "function (e) { e[#{JSON.dump(name)}] = (#{expression.to_javascript}(e)); return e; }"
   end
 end

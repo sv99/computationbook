@@ -1,3 +1,5 @@
+require 'rspec/its'
+
 require_relative 'spec_helper'
 require_relative '../syntax'
 

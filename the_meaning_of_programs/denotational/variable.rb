@@ -1,4 +1,4 @@
-require 'execjs/json'
+require 'execjs'
 require_relative '../syntax/variable'
 
 class Variable
@@ -7,6 +7,6 @@ class Variable
   end
 
   def to_javascript
-    "function (e) { return e[#{ExecJS::JSON.encode(name)}]; }"
+    "function (e) { return e[#{JSON.dump(name)}]; }"
   end
 end
