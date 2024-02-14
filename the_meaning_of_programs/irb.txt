@@ -161,6 +161,7 @@ proc.call({ x: 1 })
 
 require 'treetop'
 Treetop.load('simple')
+Treetop.load('the_meaning_of_programs/parser/simple')
 parse_tree = SimpleParser.new.parse('while (x < 5) { x = x * 3 }')
 statement = parse_tree.to_ast
 statement.evaluate({ x: Number.new(1) })
